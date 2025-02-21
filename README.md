@@ -69,15 +69,14 @@ flutter run
 ## 🏗️ Project Structure
 ```
 📂 activity_monitoring
-│── lib/
-│   ├── main.dart                 # Entry point of the app
-│   ├── service/
-│   │   ├── background_service.dart  # Handles background tracking
-│   │   ├── database_service.dart    # SQLite database interactions
-│   │   ├── usage_service.dart       # Fetches app usage stats
-│   ├── view/
-│   │   ├── activity_monitoring.dart # Main UI for querying AI
-│   │   ├── query_screen.dart        # UI for querying AI assistant
+├── activity_monitoring.dart
+├── model
+├── service
+├───└──background_service.dart
+├───└──database_service.dart
+├───└──usage_service.dart
+└── view
+    └── activity_monitoring.dart
 │── android/
 │── ios/
 │── pubspec.yaml                   # Dependencies
@@ -98,7 +97,7 @@ The AI assistant communicates with an API for analysis. The request format is:
 Ensure your API endpoint is configured properly:
 ```dart
 final response = await http.post(
-  Uri.parse('http://192.168.0.119:11434/v1/chat/completions'),
+  Uri.parse('http://127.0.0.1:11434/v1/chat/completions'),
   headers: {'Content-Type': 'application/json'},
   body: jsonEncode(requestBody),
 );
@@ -114,7 +113,7 @@ final response = await http.post(
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📩 Contact
-For questions or support, reach out to **your.email@example.com** or open an issue in the repository.
+For questions or support, reach out to **idrisattar@icloud.com** or open an issue in the repository.
 
 ---
 🎯 Built with ❤️ using Flutter.
